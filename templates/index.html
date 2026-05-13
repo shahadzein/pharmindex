@@ -228,7 +228,7 @@
     .badge {
       padding: 5px 14px;
       border-radius: 50px;
-      font-size: 12px;
+      font-size: 20px;
       font-weight: 600;
       backdrop-filter: blur(8px);
     }
@@ -368,10 +368,10 @@
             <span class="badge badge-form">📦 {{ result.form }}</span>
           {% endif %}
           {% if result.route != "Not available" %}
-            <span class="badge badge-route">🚀 {{ result.route }}</span>
+            <span class="badge badge-route"> {{ result.route }}</span>
           {% endif %}
           {% if result.selected_strength %}
-            <span class="badge badge-strength">💊 {{ result.selected_strength }}</span>
+            <span class="badge badge-strength"> {{ result.selected_strength }}</span>
           {% endif %}
         </div>
       </div>
