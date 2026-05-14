@@ -286,72 +286,49 @@
     }
 
    .card {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(40px) saturate(180%);
-      -webkit-backdrop-filter: blur(40px) saturate(180%);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 20px;
-      padding: 28px;
-      transition: all 0.25s ease;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .card:hover {
-      background: rgba(255,255,255,0.13);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    }
+  background: rgba(20, 24, 32, 0.55);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 28px;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  color: #f5f7ff;
+}
 
-    .card.warning { border: 1px solid rgba(255,255,255,0.15); }
-    .card.caution { border: 1px solid rgba(255,255,255,0.15); }
-    .card.info    { border: 1px solid rgba(255,255,255,0.15); }
-    .card.safe    { border: 1px solid rgba(255,255,255,0.15); }
+.card:hover {
+  background: rgba(28, 32, 44, 0.72);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
 
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
+.card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #b9d4ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
 
-   .card h3 {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #6b7a99;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+  text-shadow:
+    0 2px 12px rgba(0,0,0,0.45),
+    0 0 18px rgba(120,170,255,0.25);
+}
 
-    .card h3 span.emoji { display: none; }
-
-    .card p {
-      font-size: 14px;
-      line-height: 1.75;
-      text-align: left;
-      margin: 0;
-    }
-
-    @media (max-width: 600px) {
-      .card p {
-        text-align: left;
-      }
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-      .card {
-        width: 100%;
-      }
-      .results-panel {
-        padding: 0 16px;
-        width: 100%;
-        overflow: hidden;
-      }
-      .drug-header {
-        padding: 0 4px;
-      }
-    }
+.card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+  text-align: left;
+  margin: 0;
+  font-weight: 400;
+}
 
     .listen-btn {
       background: rgba(255,255,255,0.08);
