@@ -256,7 +256,7 @@
     .badge {
       padding: 5px 14px;
       border-radius: 50px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       backdrop-filter: blur(8px);
     }
@@ -285,21 +285,24 @@
       gap: 14px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 22px;
-      transition: background 0.2s;
+   .card {
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: relative;
+      border: none;
+      border-left: none;
+      border-top: none;
+      border-bottom: none;
+      border-right: none;
     }
     .card:hover { background: rgba(255,255,255,0.09); }
 
-    .card.warning { border-left: 3px solid rgba(248,113,113,0.7); }
-    .card.caution { border-left: 3px solid rgba(251,191,36,0.7); }
-    .card.info    { border-left: 3px solid rgba(96,165,250,0.7); }
-    .card.safe    { border-left: 3px solid rgba(52,211,153,0.7); }
+    .card.warning { border: none; }
+    .card.caution { border: none; }
+    .card.info    { border: none; }
+    .card.safe    { border: none; }
 
     .card-header {
       display: flex;
@@ -308,18 +311,44 @@
       margin-bottom: 12px;
     }
 
-    .card h3 {
-      font-size: 13px;
+   .card h3 {
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
+      color: #6b7a99;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+
+    .card h3 span.emoji { display: none; }
 
     .card p {
       font-size: 14px;
-      color: rgba(255,255,255,0.8);
       line-height: 1.75;
+      text-align: left;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .card p {
+        text-align: left;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .card {
+        width: 100%;
+      }
+      .results-panel {
+        padding: 0 16px;
+        width: 100%;
+        overflow: hidden;
+      }
+      .drug-header {
+        padding: 0 4px;
+      }
     }
 
     .listen-btn {
@@ -409,7 +438,7 @@
     <div class="cards-grid">
       <div class="card info">
         <div class="card-header">
-          <h3>📋 What it's used for</h3>
+          <h3> What it's used for</h3>
           <button class="listen-btn" onclick="speak(this.closest('.card').querySelector('p').innerText)">🔊 Listen</button>
         </div>
         <p>{{ result.indications }}</p>
@@ -417,7 +446,7 @@
 
       <div class="card safe">
         <div class="card-header">
-          <h3>💊 Dosage</h3>
+          <h3> Dosage</h3>
           <button class="listen-btn" onclick="speak(this.closest('.card').querySelector('p').innerText)">🔊 Listen</button>
         </div>
         <p>{{ result.dosage }}</p>
@@ -441,7 +470,7 @@
 
       <div class="card warning">
         <div class="card-header">
-          <h3>🔄 Drug Interactions</h3>
+          <h3> Drug Interactions</h3>
           <button class="listen-btn" onclick="speak(this.closest('.card').querySelector('p').innerText)">🔊 Listen</button>
         </div>
         <p>{{ result.interactions }}</p>
@@ -457,7 +486,7 @@
 
       <div class="card caution">
         <div class="card-header">
-          <h3>🍔 Food & Alcohol</h3>
+          <h3> Food & Alcohol</h3>
           <button class="listen-btn" onclick="speak(this.closest('.card').querySelector('p').innerText)">🔊 Listen</button>
         </div>
         <p>{{ result.food_interactions }}</p>
