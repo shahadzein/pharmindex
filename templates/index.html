@@ -256,7 +256,7 @@
     .badge {
       padding: 5px 14px;
       border-radius: 50px;
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 600;
       backdrop-filter: blur(8px);
     }
@@ -286,23 +286,25 @@
     }
 
    .card {
-      border-radius: 16px;
-      padding: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      position: relative;
-      border: none;
-      border-left: none;
-      border-top: none;
-      border-bottom: none;
-      border-right: none;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 28px;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
     }
-    .card:hover { background: rgba(255,255,255,0.09); }
+    .card:hover {
+      background: rgba(255,255,255,0.13);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
 
-    .card.warning { border: none; }
-    .card.caution { border: none; }
-    .card.info    { border: none; }
-    .card.safe    { border: none; }
+    .card.warning { border: 1px solid rgba(255,255,255,0.15); }
+    .card.caution { border: 1px solid rgba(255,255,255,0.15); }
+    .card.info    { border: 1px solid rgba(255,255,255,0.15); }
+    .card.safe    { border: 1px solid rgba(255,255,255,0.15); }
 
     .card-header {
       display: flex;
@@ -422,7 +424,7 @@
         <div class="drug-title">{{ result.name }}</div>
         <div class="drug-badges">
           {% if result.form != "Not available" %}
-            <span class="badge badge-form">📦 {{ result.form }}</span>
+            <span class="badge badge-form"> {{ result.form }}</span>
           {% endif %}
           {% if result.route != "Not available" %}
             <span class="badge badge-route"> {{ result.route }}</span>
@@ -490,7 +492,7 @@
           <button class="listen-btn" onclick="speak(this.closest('.card').querySelector('p').innerText)">🔊 Listen</button>
         </div>
         <p>{{ result.food_interactions }}</p>
-        <p style="margin-top:8px; color: rgba(251,191,36,0.8);">🍺 {{ result.alcohol }}</p>
+        <p style="margin-top:8px; color: rgba(251,191,36,0.8);"> {{ result.alcohol }}</p>
       </div>
     </div>
   </div>
