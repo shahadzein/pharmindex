@@ -67,6 +67,17 @@
       max-width: 440px;
       line-height: 1.6;
     }
+    .logo {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
 
     /* ── SEARCH CARD ── */
     .search-card {
@@ -371,9 +382,9 @@
 <body>
 
 <div class="hero">
-  <a href="/" style="text-decoration: none;">
-    <p class="hero-label" style="font-size: 28px; font-weight: 800; letter-spacing: 1px; color: white;"> PharmIndex</p>
-  </a>
+  <a href="/" class="logo">
+  PharmIndex
+</a>
   <h1>Know Your<br>Medication</h1>
   <p>Search any medication by brand or generic name. structured information from the FDA.</p>
 
